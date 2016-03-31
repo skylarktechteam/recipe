@@ -1,0 +1,29 @@
+<p> Show me the results html</p>
+
+<p> Show Page in case you wondered where you were</p>
+
+<h1>Searching for - "<%= @search_term %>" </h1>
+
+<table width="650" border="0" cellspacing="3" cellpadding="3">
+
+<tr>
+    <th scope="col">Thumbnail Image:</th>
+    <th scope="col">Title: </th>
+    <th scope="col">Ranking the recipe "fnarr"</th>
+  </tr>
+  
+<% @recipes.each do |recipe| %>
+
+<tr>
+    <td>
+	<img class ="image_style"  />
+    <a href= "<%= (recipe["image_url"]) %> "> <%= image_tag(recipe["image_url"]) %> </img> </a></td>
+    <td>
+    <a href= "<%= (recipe["source_url"]) %> "> <%= sanitize recipe["title"] %>  </a> 
+   
+    </td>
+
+    <td><%= recipe["social_rank"] %></td>
+  </tr>
+<% end %>
+</table>

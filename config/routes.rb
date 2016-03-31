@@ -3,16 +3,21 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   #get recipe/index
   # You can have the root of your site routed with "root"
-   root 'recipe#index'
-
+   root 'recipes#index'
+   #get 'recipes/index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+
+  #Make the RecipesController index action the default (root) page for
+  #your application. Instead of having to go to http://localhost:3000/recipes/index
+  get 'recipes/index'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-     resources :recipes
+    resources :recipes
 
   # Example resource route with options:
   #   resources :products do
